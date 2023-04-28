@@ -22,7 +22,3 @@ Givit ti consente di trovare e noleggiare prodotti vicino a te in modo facile e 
 ## Come installare
 
 Puoi scaricare Givit dal tuo store di app preferito. Una volta installata, accedi con il tuo account e inizia a cercare e noleggiare prodotti! 
-
-## Contatti
-
-Per qualsiasi domanda o suggerimento, non esitare a contattarci all'indirizzo email support@givit.com.
