@@ -1,0 +1,72 @@
+import { StyleSheet } from "react-native";
+
+export default about1Styles = StyleSheet.create({
+    container: {
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+    },
+    background: {
+        height: '100%',
+        width: '100%',
+        flex: 1,
+        justifyContent: 'center',
+    },
+    card: {
+        flex: 3,
+        alignContent: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FFFFFF',
+        marginTop: '30%',
+        marginBottom: '10%',
+        marginLeft: '10%',
+        marginRight: '10%',
+        borderRadius: 22,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.41,
+        shadowRadius: 9.11,
+        elevation: 14,
+    },
+    card_title: {
+        fontFamily: 'Cookie',
+        fontSize: 96,
+        textAlign: 'center',
+        paddingBottom: 50,
+    },
+    card_logo: {
+        width: '30%',
+        height: '20%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingBottom: 50,
+        paddingLeft: 10,
+    },
+    card_description: {
+        paddingVertical: 50,
+        textAlign: 'center',
+        fontFamily: 'Inter-Medium',
+        marginLeft: '10%',
+        marginRight: '10%',
+    },
+    button: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    button_image: {
+        width: '15%',
+        height: '15%',
+        backgroundColor: '#FFFFFF',
+        padding: 40,
+        marginBottom: '20%',
+        borderRadius: 30,
+    },
+});
