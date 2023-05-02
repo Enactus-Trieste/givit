@@ -26,3 +26,12 @@ Puoi scaricare Givit dal tuo store di app preferito. Una volta installata, acced
 ## Contatti
 
 Per qualsiasi domanda o suggerimento, non esitare a contattarci all'indirizzo email support@givit.com.
+
+## Requisiti per eseguire in locale
+
+- Installare NodeJS dal seguente link: https://nodejs.org/en
+- Clonare la repository da GitHub
+- Spostarsi nella directory "app"
+- Eseguire sul terminale il comando "npx expo start"
+- Scaricare l'applicazione "Expo Go" dallo store relativo al proprio sistema operativo
+- Inquadrare il QR Code per visualizzare una versione dell'applicazione sul proprio dispositivo o seguire la istruzioni mostrate su terminale per eseguire un emulatore sia di Android che di IOS.

@@ -19,7 +19,7 @@ export default function App() {
   }
 
   return (
-    <About1 />
+    <Homepage />
   );
 
 }
