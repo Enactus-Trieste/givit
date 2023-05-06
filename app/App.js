@@ -3,6 +3,9 @@ import AppLoading from "expo-app-loading";
 
 import Homepage from './view/Homepage';
 import About1 from './view/About/About1';
+import About2 from './view/About/About2';
+import About3 from './view/About/About3';
+import SignupPage from "./view/SignupPage";
 
 export default function App() {
 
