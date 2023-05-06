@@ -1,37 +1,37 @@
 # Givit
 
-Givit è un'applicazione mobile disponibile per IOS e Android che consente di noleggiare prodotti di varie categorie tra utenti privati. 
+Givit is a mobile application available for IOS and Android that allows users to rent products of various categories from private individuals.
 
-## Come funziona
+## How it works
 
-Givit ti consente di trovare e noleggiare prodotti vicino a te in modo facile e conveniente. Puoi cercare ciò che ti serve, selezionare il prodotto che ti interessa, prenotarlo e organizzare il ritiro o la consegna direttamente con l'altro utente. 
+Givit allows you to easily and conveniently find and rent products near you. You can search for what you need, select the product you are interested in, book it, and arrange for pickup or delivery directly with the other user.
 
-## Caratteristiche principali
+## Key features
 
-- Interfaccia utente intuitiva e facile da usare
-- Possibilità di noleggiare prodotti di varie categorie, come abbigliamento, attrezzature sportive, elettronica, libri e molto altro ancora
-- Prenotazione e pagamento direttamente nell'app
-- Comunicazione diretta con l'altro utente per organizzare il ritiro o la consegna
-- Sistema di recensioni per valutare l'affidabilità degli utenti
+- Intuitive and easy-to-use user interface
+- Ability to rent products from various categories such as clothing, sports equipment, electronics, books, and more
+- Booking and payment directly within the app
+- Direct communication with the other user to arrange pickup or delivery
+- Review system to assess user reliability
 
-## Requisiti del sistema
+## System requirements
 
-- Disponibile per IOS 11 o versioni successive
-- Disponibile per Android 5.0 o versioni successive
+- Available for IOS 11 or later
+- Available for Android 5.0 or later
 
-## Come installare
+## How to install
 
-Puoi scaricare Givit dal tuo store di app preferito. Una volta installata, accedi con il tuo account e inizia a cercare e noleggiare prodotti! 
+You can download Givit from your preferred app store. Once installed, log in with your account and start searching and renting products!
 
-## Contatti
+## Contacts
 
-Per qualsiasi domanda o suggerimento, non esitare a contattarci all'indirizzo email support@givit.com.
+For any questions or suggestions, please do not hesitate to contact us at the email address support@givit.com.
 
-## Requisiti per eseguire in locale
+## Instructions for running locally
 
-- Installare NodeJS dal seguente link: https://nodejs.org/en
-- Clonare la repository da GitHub
-- Spostarsi nella directory "app"
-- Eseguire sul terminale il comando "npx expo start"
-- Scaricare l'applicazione "Expo Go" dallo store relativo al proprio sistema operativo
-- Inquadrare il QR Code per visualizzare una versione dell'applicazione sul proprio dispositivo o seguire la istruzioni mostrate su terminale per eseguire un emulatore sia di Android che di IOS.
+- Install NodeJS from the following link: https://nodejs.org/en
+- Clone the repository from GitHub
+- Move to the "app" directory
+- Run the command "npx expo start" in the terminal
+- Download the "Expo Go" application from the app store of your operating system
+- Scan the QR Code to view a version of the application on your device or follow the instructions displayed in the terminal to run an emulator for both Android and IOS.
