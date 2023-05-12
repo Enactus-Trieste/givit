@@ -2,76 +2,95 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
-  Image,
-  ImageBackground,
   Text,
   TouchableOpacity
 } from "react-native";
+import {LinearGradient} from 'expo-linear-gradient';
 
 function Homepage(props) {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../assets/images/background.jpeg")}
-        resizeMode="contain"
+    <LinearGradient
+        colors={['#0CE6AC', '#00D5E2']}
         style={styles.background}
-        imageStyle={styles.background_imageStyle}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
       >
-        <Text style={styles.title}>Benvenuto!</Text>
-        <Text style={styles.section_text}>Hai già sentito parlare di noi?</Text>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("About1")}
-          style={styles.section_button}
-        >
-          <Text style={styles.section_button_text}>Conosciamoci!</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("SignupPage")}
-          style={styles.button}
-        >
-          <Text style={styles.button_text}>So già tutto</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
+      <View style={styles.container}>
+        <View style={styles.section1}>
+          <Text style={styles.section1_text}>Benvenuto!</Text>
+        </View>
+        <View style={styles.section2}>
+          <Text style={styles.section2_text}>Hai già sentito parlare di noi?</Text>
+          <TouchableOpacity
+            style={styles.section2_button}
+          >
+            <Text style={styles.section2_button_text}>Conosciamoci!</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.section3}>
+          <TouchableOpacity
+            style={styles.section3_button}
+          >
+            <Text style={styles.section3_button_text}>So già tutto</Text>
+          </TouchableOpacity>  
+        </View>
+      </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   background: {
-    width: 1220,
-    height: 1099,
-    marginTop: -177,
-    marginLeft: -422
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  background_imageStyle: {},
-  title: {
-    width: '100%',
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section1: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section2: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section3: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section1_text: {
     textAlign: 'center',
     fontFamily: "PTSans-Bold",
-    color: "#121212",
-    fontSize: 55,
-    marginTop: '28%',
+    fontSize: 48,
+    lineHeight: 62.16,
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  section_text: {
-    width: '100%',
-    fontFamily: "Inter-Bold",
-    color: "rgba(255,255,255,1)",
-    marginTop: '13%',
+  section2_text: {
     textAlign: 'center',
+    fontFamily: "Inter-Bold",
+    color: "white",
     fontSize: 15,
     lineHeight: 16.94,
+    marginTop: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  section_button: {
-    width: 154,
-    height: 45,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,1)",
+  section2_button: {
+    width: 165,
+    height: 49,
+    backgroundColor: "white",
     borderRadius: 50,
-    shadowColor: "rgba(0,0,0,1)",
+    shadowColor: "black",
     shadowOffset: {
       width: 3,
       height: 3
@@ -79,38 +98,44 @@ const styles = StyleSheet.create({
     elevation: 90,
     shadowOpacity: 0.25,
     shadowRadius: 30,
-    marginTop: 25,
-    marginLeft: 532
-  },
-  section_button_text: {
-    width: '100%',
-    fontFamily: "Inter-Bold",
-    color: "rgba(0,178,157,1)",
-    marginTop: 'auto',
+    marginTop: '5%',
     marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  section2_button_text: {
     textAlign: 'center',
+    fontFamily: "Inter-Bold",
+    color: "#00B29D",
     fontSize: 15,
     lineHeight: 16.94,
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  button: {
-    width: 111,
+  section3_button: {
+    width: 129,
     height: 34,
     backgroundColor: "rgba(0,0,0,1)",
     borderWidth: 1,
     borderColor: "#000000",
-    borderRadius: 29,
-    marginTop: '13%',
-    marginLeft: 554
+    borderRadius: 50,
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  button_text: {
-    width: '100%',
+  section3_button_text: {
     fontFamily: "Inter-Medium",
-    color: "rgba(255,255,255,1)",
+    color: "white",
     fontSize: 14,
     lineHeight: 16.94,
     textAlign: 'center',
     marginTop: 'auto',
     marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   }
 });
 
