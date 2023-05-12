@@ -3,7 +3,8 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView
 } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 
@@ -15,26 +16,28 @@ function Homepage(props) {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-      <View style={styles.container}>
-        <View style={styles.section1}>
-          <Text style={styles.section1_text}>Benvenuto!</Text>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <View style={styles.section1}>
+            <Text style={styles.section1_text}>Benvenuto!</Text>
+          </View>
+          <View style={styles.section2}>
+            <Text style={styles.section2_text}>Hai già sentito parlare di noi?</Text>
+            <TouchableOpacity
+              style={styles.section2_button}
+            >
+              <Text style={styles.section2_button_text}>Conosciamoci!</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.section3}>
+            <TouchableOpacity
+              style={styles.section3_button}
+            >
+              <Text style={styles.section3_button_text}>So già tutto</Text>
+            </TouchableOpacity>  
+          </View>
         </View>
-        <View style={styles.section2}>
-          <Text style={styles.section2_text}>Hai già sentito parlare di noi?</Text>
-          <TouchableOpacity
-            style={styles.section2_button}
-          >
-            <Text style={styles.section2_button_text}>Conosciamoci!</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.section3}>
-          <TouchableOpacity
-            style={styles.section3_button}
-          >
-            <Text style={styles.section3_button_text}>So già tutto</Text>
-          </TouchableOpacity>  
-        </View>
-      </View>
+      </SafeAreaView>
     </LinearGradient>
   );
 }

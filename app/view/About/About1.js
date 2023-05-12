@@ -3,66 +3,70 @@ import {
   StyleSheet,
   View,
   Image,
-  ImageBackground,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions,
+  SafeAreaView
 } from "react-native";
+import {LinearGradient} from 'expo-linear-gradient';
 
 function About1(props) {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/images/background.jpeg")}
-        resizeMode="contain"
+    <LinearGradient
+        colors={['#0CE6AC', '#00D5E2']}
         style={styles.background}
-        imageStyle={styles.background_imageStyle}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
       >
-        <View style={styles.card}>
-          <Text style={styles.card_title}>Givit</Text>
-          <Image
-            source={require("../../assets/images/logo.jpeg")}
-            resizeMode="contain"
-            style={styles.card_icon}
-          ></Image>
-          <Text style={styles.card_text}>
-            Con Givit puoi noleggiare e mettere{"\n"}a noleggio quaisiasi
-            oggetto,{"\n"}quando e come vuoi.
-          </Text>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <View style={styles.section1}>
+              <Text style={styles.section1_text1}>Givit</Text>
+              <Image
+                source={require("../../assets/images/logo.jpeg")}
+                resizeMode="contain"
+                style={styles.section1_image}
+              ></Image>
+              <Text style={styles.section1_text2}>
+                Con Givit puoi noleggiare e mettere{"\n"}a noleggio quaisiasi
+                oggetto,{"\n"}quando e come vuoi.
+              </Text>
+          </View>
+          <View style={styles.section2}>
+            <TouchableOpacity
+              style={styles.section2_button}
+            >
+              <Image
+                source={require("../../assets/images/arrow.png")}
+                resizeMode="contain"
+                style={styles.section2_button_image}
+              ></Image>
+            </TouchableOpacity>
+          </View>
         </View>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("About2")}
-          style={styles.button}
-        >
-          <Image
-            source={require("../../assets/images/arrow.png")}
-            resizeMode="contain"
-            style={styles.button_icon}
-          ></Image>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
+      </SafeAreaView>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   background: {
-    width: 1220,
-    height: 1099,
-    marginTop: -176,
-    marginLeft: -424
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  background_imageStyle: {},
-  card: {
-    width: 281,
-    height: 464,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,1)",
-    borderRadius: 22,
-    shadowColor: "rgba(0,0,0,1)",
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section1: {
+    flex: 2,
+    width: (Dimensions.get('screen').width)*0.7,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: "black",
     shadowOffset: {
       width: 3,
       height: 3
@@ -70,57 +74,69 @@ const styles = StyleSheet.create({
     elevation: 90,
     shadowOpacity: 0.25,
     shadowRadius: 30,
-    marginTop: 298,
-    marginLeft: 471
+    borderRadius: 22,
+    marginTop: '10%',
+    marginBottom: '10%',
   },
-  card_title: {
-    width: '100%',
-    fontFamily: "Cookie",
-    color: "#121212",
-    fontSize: 96,
-    marginTop: 70,
+  section2: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section1_text1: {
+    flex: 1,
     textAlign: 'center',
-  },
-  card_icon: {
-    width: 110,
-    height: 130,
-    marginTop: 12,
+    fontFamily: 'Cookie',
+    fontSize: 96,
+    lineHeight: 106.46,
+    marginTop: '20%',
+    marginBottom: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  card_text: {
-    width: '100%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    textAlign: "center",
-    lineHeight: 16.94,
+  section1_image: {
+    flex: 1,
+    width: 106,
+    height: 106,
+    marginTop: '10%',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  section1_text2: {
+    flex: 1,
+    textAlign: 'center',
+    fontFamily: 'Inter-Medium',
     fontSize: 14,
-    marginTop: 33,
+    lineHeight: 16.94,
+    marginTop: '20%',
+    marginBottom: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  button: {
+  section2_button: {
     width: 75,
     height: 75,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,1)",
+    backgroundColor: 'white',
     borderRadius: 50,
-    shadowColor: "rgba(0,0,0,1)",
+    shadowColor: "black",
     shadowOffset: {
-      width: 0,
-      height: 5
+      width: 3,
+      height: 3
     },
     elevation: 90,
     shadowOpacity: 0.25,
     shadowRadius: 30,
-    marginTop: 47,
-    marginLeft: 574
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  button_icon: {
-    width: 34,
-    height: 40,
-    marginTop: 18,
+  section2_button_image: {
+    width: 25,
+    height: 30,
+    marginTop: 'auto',
+    marginBottom: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
   }
