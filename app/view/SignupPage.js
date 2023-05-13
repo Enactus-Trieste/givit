@@ -6,338 +6,264 @@ import {
   ImageBackground,
   Text,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView,
+  Dimensions,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 function SignupPage(props) {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../assets/images/background.jpeg")}
-        resizeMode="contain"
+    <LinearGradient
+        colors={['#0CE6AC', '#00D5E2']}
         style={styles.background}
-        imageStyle={styles.background_imageStyle}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
       >
-        <Text style={styles.title}>Crea un account</Text>
-        <View style={styles.container_icon}>
-          <Image
-            source={require("../assets/images/camera.png")}
-            resizeMode="contain"
-            style={styles.profile_icon}
-          ></Image>
-        </View>
-        <View style={styles.name_labelRow}>
-          <Text style={styles.name_label}>Come ti chiami?</Text>
-          <View style={styles.input_name_container}>
+      <SafeAreaView style={{ flex: 1, width: Dimensions.get('screen').width*0.7 }}>
+        <View style={styles.form}>
+          <Text style={styles.title}>Crea un account</Text>
+          <View style={styles.image_picker}>
+            <TouchableOpacity
+              style={styles.image_picker_button}
+            >
+              <Image
+                source={require("../assets/images/camera.png")}
+                resizeMode="contain"
+                style={styles.image_picker_button_image}
+              ></Image>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.name_picker}>
+            <Text style={styles.name_picker_label}>Come ti chiami?</Text>
             <TextInput
-              placeholder="Nome"
-              placeholderTextColor="rgba(0,0,0,1)"
-              style={styles.input_name_placeholder}
+                placeholder='Nome'
+                placeholderTextColor='black'
+                style={styles.name_picker_input}
             ></TextInput>
           </View>
+          <View style={styles.email_picker}>
+            <TextInput
+              placeholder='Email'
+              placeholderTextColor='black'
+              style={styles.email_picker_input}
+            ></TextInput>
+          </View>
+          <View style={styles.password_picker}>
+            <TextInput
+              placeholder='Password'
+              placeholderTextColor='black'
+              style={styles.password_picker_input}
+            ></TextInput>
+          </View>
+          <View style={styles.submit}>
+            <TouchableOpacity
+              style={styles.submit_button}
+            >
+              <Text style={styles.submit_button_text}>Crea</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.input_email_container}>
-          <TextInput
-            placeholder="Email"
-            placeholderTextColor="rgba(0,0,0,1)"
-            style={styles.input_email_placeholder}
-          ></TextInput>
-        </View>
-        <View style={styles.input_password_container}>
-          <TextInput
-            placeholder="Password"
-            placeholderTextColor="rgba(0,0,0,1)"
-            style={styles.input_password_placeholder}
-          ></TextInput>
-        </View>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("SignupPage")}
-          style={styles.button_signup}
-        >
-          <Text style={styles.button_signup_text}>Crea</Text>
-        </TouchableOpacity>
-        <View style={styles.container_social}>
-          <Text style={styles.container_social_label}>Accedi con:</Text>
-          <View style={styles.container_social_googleStackRow}>
-            <View style={styles.container_social_googleStack}>
-              <View style={styles.container_social_google}></View>
+        <View style={styles.form_social}>
+          <Text style={styles.form_social_label}>Accedi con</Text>
+          <View style={styles.form_social_list}>
+            <TouchableOpacity
+              style={styles.form_social_list_button}
+            >
               <Image
                 source={require("../assets/images/google.png")}
                 resizeMode="contain"
-                style={styles.google_icon}
+                style={styles.form_social_list_button_image}
               ></Image>
-            </View>
-            <View style={styles.container_social_appleStack}>
-              <View style={styles.container_social_apple}></View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.form_social_list_button}
+            >
               <Image
                 source={require("../assets/images/apple.png")}
                 resizeMode="contain"
-                style={styles.apple_icon}
+                style={styles.form_social_list_button_image}
               ></Image>
-            </View>
-            <View style={styles.container_social_facebook}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.form_social_list_button}
+            >
               <Image
                 source={require("../assets/images/facebook.png")}
                 resizeMode="contain"
-                style={styles.facebook_icon}
+                style={styles.form_social_list_button_image}
               ></Image>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.label_loginStack}>
-          <Text style={styles.label_login}>Hai già un account?</Text>
-          <View style={styles.button_login}>
-            <Text style={styles.button_login_text}>Log in</Text>
-          </View>
+        <View style={styles.login}>
+          <Text style={styles.login_text}>Hai già un account?</Text>
+          <TouchableOpacity
+              style={styles.login_link_button}
+          >
+            <Text style={styles.login_link_button_label}>Log in</Text>
+          </TouchableOpacity>
         </View>
-      </ImageBackground>
-    </View>
+      </SafeAreaView>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   background: {
-    width: 1220,
-    height: 1099,
-    marginTop: -176,
-    marginLeft: -422
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  background_imageStyle: {},
   title: {
-    width: '100%',
-    fontFamily: "PTSans-Bold",
-    color: "#121212",
-    fontSize: 32,
-    marginTop: '25%',
-    textAlign: 'center',
+    flex: 1,
+    fontFamily: 'PTSans-Bold',
+    fontSize: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
-  container_icon: {
+  form: {
+    flex: 3,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '15%',
+  },
+  image_picker: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image_picker_button: {
     width: 52,
     height: 52,
-    backgroundColor: "rgba(255,255,255,1)",
     borderRadius: 50,
-    marginTop: '5%',
-    marginLeft: 583
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  profile_icon: {
-    width: '100%',
-    width: 23,
-    height: 20,
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginRight: 'auto',
-    marginLeft: 'auto',
+  name_picker: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  name_label: {
-    fontFamily: "Inter-Medium",
-    color: "rgba(255,255,255,1)",
-    marginTop: 'auto',
-    marginBottom: 'auto',
+  name_picker_label: {
+    flex: 1,
+    fontFamily: 'Inter-Bold',
+    fontSize: 14,
+    lineHeight: 16.94,
+    color: 'white',
   },
-  input_name_container: {
-    width: '9%',
+  name_picker_input: {
+    flex: 1,
     height: 35,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 23,
-    marginLeft: 11,
-  },
-  input_name_placeholder: {
-    width: '100%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    width: '100%',
-    height: 17,
-    textAlign: "center",
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    fontSize: 14,
-  },
-  name_labelRow: {
-    width: '100%',
-    height: 31,
-    flexDirection: "row",
-    marginTop: 23,
-    marginLeft: 507,
-    marginRight: 502
-  },
-  input_email_container: {
-    width: 211,
-    height: 35,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 50,
-    marginTop: '2%',
-    marginLeft: 507
-  },
-  input_email_placeholder: {
-    width: '100%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    width: 63,
-    height: 17,
-    textAlign: "center",
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    fontSize: 14,
-  },
-  input_password_container: {
-    width: 211,
-    height: 35,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 50,
-    marginTop: '2%',
-    marginLeft: 507,
-  },
-  input_password_placeholder: {
-    width: '100%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    width: 63,
-    height: 17,
-    textAlign: "center",
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    fontSize: 14,
-  },
-  button_signup: {
-    width: 82,
-    height: 34,
-    backgroundColor: "rgba(0,0,0,1)",
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 29,
-    marginTop: 23,
-    marginLeft: 571
-  },
-  button_signup_text: {
-    width: '100%',
-    fontFamily: "Inter-Medium",
-    color: "rgba(255,255,255,1)",
-    fontSize: 13,
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    textAlign: 'center',
-    fontSize: 14,
-  },
-  container_social: {
-    width: 125,
-    height: 75,
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: 'white',
     borderRadius: 22,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 5
-    },
-    elevation: 90,
-    shadowOpacity: 0.25,
-    shadowRadius: 30,
-    marginTop: '5%',
-    marginLeft: 547
+    textAlign: 'center',
+    fontFamily: 'Inter-Medium',
   },
-  container_social_label: {
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    marginTop: 12,
-    marginLeft: 28
+  email_picker: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  container_social_google: {
-    top: 0,
-    left: 0,
-    width: 27,
-    height: 27,
-    position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)"
+  email_picker_input: {
+    flex: 1,
+    height: 35,
+    backgroundColor: 'white',
+    borderRadius: 22,
+    textAlign: 'center',
+    fontFamily: 'Inter-Medium',
   },
-  google_icon: {
-    top: 0,
-    left: 2,
-    width: 27,
-    height: 27,
-    position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,1)"
+  password_picker: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  container_social_googleStack: {
-    width: 29,
-    height: 27,
-    marginTop: 1
+  password_picker_input: {
+    flex: 1,
+    height: 35,
+    backgroundColor: 'white',
+    borderRadius: 22,
+    textAlign: 'center',
+    fontFamily: 'Inter-Medium',
   },
-  container_social_apple: {
-    top: 1,
-    left: 0,
-    width: 27,
-    height: 27,
-    position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)"
+  submit: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  apple_icon: {
-    top: 0,
-    left: 2,
-    width: 27,
-    height: 27,
-    position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)"
+  submit_button: {
+    width: 97,
+    height: 34,
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 22,
   },
-  container_social_appleStack: {
-    width: 29,
-    height: 28,
-    marginLeft: 5
-  },
-  container_social_facebook: {
-    width: 27,
-    height: 27,
-    backgroundColor: "rgba(255,255,255,1)",
-    marginLeft: 9,
-    marginTop: 1
-  },
-  facebook_icon: {
-    width: 24,
-    height: 24,
-    marginTop: 2,
-    marginLeft: 1
-  },
-  container_social_googleStackRow: {
-    height: 28,
-    flexDirection: "row",
-    marginTop: 5,
-    marginLeft: 13,
-    marginRight: 13
-  },
-  label_login: {
-    top: 0,
-    left: 0,
-    position: "absolute",
-    fontFamily: "Inter-Medium",
-    color: "#121212"
-  },
-  button_login: {
-    top: 0,
-    left: 115,
-    width: 48,
-    height: 17,
-    position: "absolute"
-  },
-  button_login_text: {
-    fontFamily: "Inter-Bold",
-    color: "#121212",
-    marginLeft: 2,
+  submit_button_text: {
+    fontFamily: 'Inter-Medium',
+    color: 'white',
     fontSize: 14,
   },
-  label_loginStack: {
-    width: 163,
-    height: 17,
-    marginTop: 34,
-    marginLeft: 530
+  form_social: {
+    height: 85,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 22,
+    marginLeft: '20%',
+    marginRight: '20%',
+    marginTop: '15%',
+  },
+  form_social_label: {
+    flex: 1,
+    fontSize: 15,
+    lineHeight: 18.15,
+    marginTop: '5%',
+    fontFamily: 'Inter-Medium',
+  },
+  form_social_list: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '5%',
+  },
+  form_social_list_button: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  login: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '15%',
+    marginBottom: 'auto',
+  },
+  login_text: {
+    flex: 2,
+    textAlign: 'right',
+    fontSize: 15,
+    lineHeight: 18.15,
+    fontFamily: 'Inter-Medium'
+  },
+  login_link_button: {
+    flex: 1,
+  },
+  login_link_button_label: {
+    fontFamily: 'Inter-Bold',
+    fontSize: 15,
+    lineHeight: 18.15,
+    textAlign: 'left',
+    marginLeft: '5%',
   }
 });
 

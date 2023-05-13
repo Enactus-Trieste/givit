@@ -3,75 +3,73 @@ import {
   StyleSheet,
   View,
   Image,
-  ImageBackground,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView,
+  Dimensions,
 } from "react-native";
+import {LinearGradient} from 'expo-linear-gradient';
 
 function About3(props) {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/images/background.jpeg")}
-        resizeMode="contain"
+    <LinearGradient
+        colors={['#0CE6AC', '#00D5E2']}
         style={styles.background}
-        imageStyle={styles.background_imageStyle}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
       >
-        <View style={styles.card}>
-          <Text style={styles.card_title}>Noleggia</Text>
-          <View style={styles.card_fSection_iconRow}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.section1}>
+          <Text style={styles.section1_text}>Noleggia</Text>
+          <View style={styles.section1_row}>
             <Image
               source={require("../../assets/images/business.png")}
               resizeMode="contain"
-              style={styles.card_fSection_icon}
+              style={styles.section1_row_image}
             ></Image>
-            <Text style={styles.card_fSection_text}>
+            <Text style={styles.section1_row_text}>
               Scegli una categoria,{"\n"}dicci qualche info... et{"\n"}voilà! Il
               tuo oggetto è{"\n"}pronto per essere{"\n"}noleggiato.
             </Text>
           </View>
-          <View style={styles.card_sSection_iconRow}>
+          <View style={styles.section1_row}>
             <Image
               source={require("../../assets/images/chat.png")}
               resizeMode="contain"
-              style={styles.card_sSection_icon}
+              style={styles.section1_row_image}
             ></Image>
-            <Text style={styles.card_sSection_text}>
+            <Text style={styles.section1_row_text}>
               Chiedi informazioni e{"\n"}accordati direttamente{"\n"}col
               proprietario, con la{"\n"}chat integrata.
             </Text>
           </View>
         </View>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("SignupPage")}
-          style={styles.button}
-        >
-          <Text style={styles.button_text}>Cominciamo</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
+        <View style={styles.section2}>
+          <TouchableOpacity
+            style={styles.section2_button}
+          >
+            <Text style={styles.section2_button_text}>Cominciamo</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </LinearGradient>
+    
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   background: {
-    width: 1220,
-    height: 1099,
-    marginTop: -176,
-    marginLeft: -424
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  background_imageStyle: {},
-  card: {
-    width: 281,
-    height: 464,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,1)",
-    borderRadius: 22,
-    shadowColor: "rgba(0,0,0,1)",
+  section1: {
+    flex: 2,
+    width: (Dimensions.get('screen').width)*0.7,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: "black",
     shadowOffset: {
       width: 3,
       height: 3
@@ -79,86 +77,49 @@ const styles = StyleSheet.create({
     elevation: 90,
     shadowOpacity: 0.25,
     shadowRadius: 30,
-    marginTop: 298,
-    marginLeft: 471
+    borderRadius: 22,
+    marginTop: '10%',
+    marginBottom: '10%',
   },
-  card_title: {
-    width: '100%',
-    fontFamily: "PTSans-Bold",
-    color: "#121212",
-    fontSize: 32,
-    marginTop: 74,
-    marginLeft: 'auto',
-    marginRight: 'auto',
+  section2: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  section1_text: {
+    flex: 1,
     textAlign: 'center',
+    fontFamily: 'PTSans-Bold',
+    fontSize: 32,
+    lineHeight: 41.44,
+    marginTop: '20%',
   },
-  card_fSection_icon: {
-    width: '40%',
-    width: 33,
-    height: 29,
-    marginTop: 14,
-    marginRight: 'auto',
-    marginLeft: '15%',
+  section1_row: {
+    flex: 1,
+    flexDirection: 'row',
   },
-  card_fSection_text: {
-    width: '50%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    textAlign: "right",
-    lineHeight: 16.94,
-    marginLeft: 'auto',
+  section1_row_image: {
+    flex: 1,
+    marginLeft: '10%',
+  },
+  section1_row_text: {
+    flex: 2,
+    textAlign: 'right',
     marginRight: '10%',
-    fontSize: 14,
   },
-  card_fSection_iconRow: {
-    width: '100%',
-    height: 83,
-    flexDirection: "row",
-    marginTop: '25%',
+  section2_button: {
+    backgroundColor: 'black',
+    width: 129,
+    height: 34,
+    borderRadius: 22,
   },
-  card_sSection_icon: {
-    width: '40%',
-    width: 33,
-    height: 33,
-    marginTop: 14,
-    marginRight: 'auto',
-    marginLeft: '15%',
-  },
-  card_sSection_text: {
-    width: '50%',
-    fontFamily: "Inter-Medium",
-    color: "#121212",
-    textAlign: "right",
-    lineHeight: 16.94,
-    marginLeft: 'auto',
-    marginRight: '10%',
-    fontSize: 14,
-  },
-  card_sSection_iconRow: {
-    width: '100%',
-    height: 66,
-    flexDirection: "row",
-    marginTop: '15%',
-  },
-  button: {
-    width: 111,
-    height: 35,
-    backgroundColor: "rgba(0,0,0,1)",
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 29,
-    marginTop: 77,
-    marginLeft: 556
-  },
-  button_text: {
-    fontFamily: "Inter-Medium",
-    color: "rgba(255,255,255,1)",
-    fontSize: 13,
+  section2_button_text: {
+    color: 'white',
     marginTop: 'auto',
     marginBottom: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
-  }
+  },
 });
 
 export default About3;
