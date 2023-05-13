@@ -33,7 +33,7 @@ const HomePage = ({navigation}) => {
                     <View style={styles.section3}>
                         <TouchableOpacity
                             style={styles.section3_button}
-                            onPress={() => navigation.navigate("SignupPage")}
+                            onPress={() => navigation.navigate("SignUpPage")}
                         >
                             <Text style={styles.section3_button_text}>So già tutto</Text>
                         </TouchableOpacity>
