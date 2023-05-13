@@ -47,7 +47,7 @@ const About3 = ({navigation}) => {
                 <View style={styles.section2}>
                     <TouchableOpacity
                         style={styles.section2_button}
-                        onPress={() => navigation.navigate("SignupPage")}
+                        onPress={() => navigation.navigate("SignUpPage")}
                     >
                         <Text style={styles.section2_button_text}>Cominciamo</Text>
                     </TouchableOpacity>
