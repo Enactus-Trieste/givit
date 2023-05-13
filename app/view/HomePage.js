@@ -2,15 +2,13 @@ import React, {Component} from "react";
 import {
     StyleSheet,
     View,
-    Image,
     Text,
     TouchableOpacity,
-    Dimensions,
     SafeAreaView
 } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 
-const About1 = ({navigation}) => {
+const HomePage = ({navigation}) => {
     return (
         <LinearGradient
             colors={['#0CE6AC', '#00D5E2']}
@@ -21,27 +19,23 @@ const About1 = ({navigation}) => {
             <SafeAreaView style={{flex: 1}}>
                 <View style={styles.container}>
                     <View style={styles.section1}>
-                        <Text style={styles.section1_text1}>Givit</Text>
-                        <Image
-                            source={require("../../assets/images/logo.jpeg")}
-                            resizeMode="contain"
-                            style={styles.section1_image}
-                        ></Image>
-                        <Text style={styles.section1_text2}>
-                            Con Givit puoi noleggiare e mettere{"\n"}a noleggio quaisiasi
-                            oggetto,{"\n"}quando e come vuoi.
-                        </Text>
+                        <Text style={styles.section1_text}>Benvenuto!</Text>
                     </View>
                     <View style={styles.section2}>
+                        <Text style={styles.section2_text}>Hai già sentito parlare di noi?</Text>
                         <TouchableOpacity
                             style={styles.section2_button}
-                            onPress={() => navigation.navigate("About2")}
+                            onPress={() => navigation.navigate("About1")}
                         >
-                            <Image
-                                source={require("../../assets/images/arrow.png")}
-                                resizeMode="contain"
-                                style={styles.section2_button_image}
-                            ></Image>
+                            <Text style={styles.section2_button_text}>Conosciamoci!</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.section3}>
+                        <TouchableOpacity
+                            style={styles.section3_button}
+                            onPress={() => navigation.navigate("SignUpPage")}
+                        >
+                            <Text style={styles.section3_button_text}>So già tutto</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -63,62 +57,43 @@ const styles = StyleSheet.create({
     },
     section1: {
         flex: 2,
-        width: (Dimensions.get('screen').width) * 0.7,
-        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: "black",
-        shadowOffset: {
-            width: 3,
-            height: 3
-        },
-        elevation: 90,
-        shadowOpacity: 0.25,
-        shadowRadius: 30,
-        borderRadius: 22,
-        marginTop: '10%',
-        marginBottom: '10%',
     },
     section2: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    section1_text1: {
-        flex: 1,
+    section3: {
+        flex: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    section1_text: {
         textAlign: 'center',
-        fontFamily: 'Cookie',
-        fontSize: 96,
-        lineHeight: 106.46,
-        marginTop: '20%',
+        fontFamily: "PTSans-Bold",
+        fontSize: 48,
+        lineHeight: 62.16,
+        marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    section1_image: {
-        flex: 1,
-        width: 106,
-        height: 106,
-        marginTop: '10%',
-        marginBottom: 'auto',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
-    section1_text2: {
-        flex: 1,
+    section2_text: {
         textAlign: 'center',
-        fontFamily: 'Inter-Medium',
-        fontSize: 14,
+        fontFamily: "Inter-Bold",
+        color: "white",
+        fontSize: 15,
         lineHeight: 16.94,
-        marginTop: '20%',
-        marginBottom: 'auto',
+        marginTop: 'auto',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
     section2_button: {
-        width: 75,
-        height: 75,
-        backgroundColor: 'white',
+        width: 165,
+        height: 49,
+        backgroundColor: "white",
         borderRadius: 50,
         shadowColor: "black",
         shadowOffset: {
@@ -128,14 +103,40 @@ const styles = StyleSheet.create({
         elevation: 90,
         shadowOpacity: 0.25,
         shadowRadius: 30,
+        marginTop: '5%',
+        marginBottom: 'auto',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    section2_button_text: {
+        textAlign: 'center',
+        fontFamily: "Inter-Bold",
+        color: "#00B29D",
+        fontSize: 15,
+        lineHeight: 16.94,
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    section2_button_image: {
-        width: 25,
-        height: 30,
+    section3_button: {
+        width: 129,
+        height: 34,
+        backgroundColor: "rgba(0,0,0,1)",
+        borderWidth: 1,
+        borderColor: "#000000",
+        borderRadius: 50,
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    section3_button_text: {
+        fontFamily: "Inter-Medium",
+        color: "white",
+        fontSize: 14,
+        lineHeight: 16.94,
+        textAlign: 'center',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 'auto',
@@ -143,4 +144,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default About1;
+export default HomePage;
