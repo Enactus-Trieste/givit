@@ -1,5 +1,7 @@
 # Givit
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Enactus-Trieste/givit/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Enactus-Trieste/givit/tree/main)
+
 Givit is a mobile application available for IOS and Android that allows users to rent products of various categories from private individuals.
 
 ## How it works
