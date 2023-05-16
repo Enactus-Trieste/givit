@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/givit/app
+    docker:
+      - image: cimg/node:18.10.0
+    steps:
+      - checkout:
+          path: ~/givit
+      - run:
+          name: Install Dependencies
+          command: npm install
